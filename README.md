@@ -15,5 +15,5 @@ Obs.: É necessário o GPS estar ligado sempre para facilitar, e ensinar a clica
 
 ## 📸 Imagem do workflow no N8n
 <p align="left">
-  <img src="img/Fluxo.PNG" width="100%">
+  <img src="img/Fluxo.png" width="100%">
 </p>
