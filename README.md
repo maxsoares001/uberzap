@@ -13,6 +13,9 @@ Isso resolveu o problema. Quando ela pede o Uber, é em uma conversa com a filha
 
 Obs.: É necessário o GPS estar ligado sempre para facilitar, e ensinar a clicar em algumas etapas do Uber. Nem tudo pode ser automatizado 100%, tem coisas que precisam ainda de intervenção humana!
 
+Resumindo, A cliente só precisa falar primeiro a referência tipo: Rua tal + número + bairro, Lanchonete tal + bairro, hospital tal + bairro e o código complementa e constroi o link.
+
+
 ## 📸 Imagem do workflow no N8n
 **O bloco em verde é outra automação que eu uso aqui com o mesmo webhook**
 <p align="left">
