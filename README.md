@@ -12,3 +12,8 @@ Só precisa apenas clicar no botão de escolha do carro e depois confirmar a loc
 Isso resolveu o problema. Quando ela pede o Uber, é em uma conversa com a filha; chega o link e a filha fica sabendo para onde ela está indo.
 
 Obs.: É necessário o GPS estar ligado sempre para facilitar, e ensinar a clicar em algumas etapas do Uber. Nem tudo pode ser automatizado 100%, tem coisas que precisam ainda de intervenção humana!
+
+## 📸 Imagem real do projeto
+<p align="left">
+  <img src="docs/Imagemreal.jpeg" width="50%">
+</p>
