@@ -18,3 +18,55 @@ Obs.: É necessário o GPS estar ligado sempre para facilitar, e ensinar a clica
 <p align="left">
   <img src="img/Fluxo.png" width="100%">
 </p>
+
+
+### 🤖 Código JS do node CODE
+```js
+// 1. Captura os dados do nó anterior (seguindo seu mapeamento do print)
+const localDesejado = ($json.messageConversation || "").trim();
+const remoteJid = $json.remoteJid;
+const pushName = $json.pushName || "Usuário";
+const instance = $json.instance; // Capturando a instância
+const messageId = $json.selectedId; // Capturando o ID da mensagem (keyId)
+const REGIAO = "Pernambuco, BR"; 
+
+if (!localDesejado) {
+  return [{ 
+    mensagem: "❌ Por favor, diga o lugar ou endereço.", 
+    remoteJid: remoteJid,
+    instance: instance,
+    messageId: messageId
+  }];
+}
+
+// 2. Preparação do endereço
+const buscaCompleta = `${localDesejado}, ${REGIAO}`;
+const enderecoLimpo = encodeURIComponent(buscaCompleta);
+const cacheBuster = Math.floor(Math.random() * 1000000);
+
+// 3. Link UBER e Google Maps
+const linkUber = `https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=${enderecoLimpo}&ref=${cacheBuster}`;
+const linkMaps = `https://www.google.com/maps/dir/?api=1&destination=${enderecoLimpo}&travelmode=driving`;
+
+// 4. Montagem da Mensagem
+const mensagemFinal = `🚗 *Opções de Corrida para ${pushName}* 🚗
+
+📍 *Destino:* ${localDesejado}
+
+⚫ *ABERTO NO UBER:*
+🔗 ${linkUber}
+
+🟡 *ROTA NO MAPS:*
+🔗 ${linkMaps}
+
+_Dica: No Google Maps, clique no ícone de "bonequinho acenando" para ver o 99 caso necessário._`;
+
+// 5. Retorno com todos os dados necessários para o próximo nó
+return [{
+  mensagem: mensagemFinal,
+  remoteJid: remoteJid,
+  instance: instance,
+  messageId: messageId,
+  pushName: pushName
+}];
+```
